@@ -51,6 +51,14 @@
     "type": "git",
     "url": "https://github.com/react-native-community/react-native-webview.git"
   },
+  "scripts": {
+    "build": "yarn tsc",
+    "ci": "CI=true && yarn lint && yarn test",
+    "ci:publish": "yarn semantic-release",
+    "lint": "yarn tsc --noEmit && yarn eslint ./src --ext .ts,.tsx",
+    "prepare": "yarn build",
+    "test": "yarn jest"
+  },
   "files": [
     "android",
     "ios",
